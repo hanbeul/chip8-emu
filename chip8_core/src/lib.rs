@@ -86,7 +86,7 @@ impl Emu {
         self.stack[self.sp as usize]
     }
 
-    fn tick(&mut self) {
+    pub fn tick(&mut self) {
         // Fetch
         let op = self.fetch();
         // Decode + Execute
@@ -101,7 +101,7 @@ impl Emu {
         op
     }
 
-    fn tick_timers(&mut self) {
+    pub fn tick_timers(&mut self) {
         if self.dt > 0 {
             self.dt -= 1;
         }
